@@ -1,0 +1,18 @@
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+  type Room 
+    @model 
+    @auth(
+      rules: [
+        {allow: owner, ownerField: "owner", operations: [create, update, delete]},
+      ])
+  {
+    id: ID!
+    roomNum: String!
+    cleaner: String
+  }
+  
